@@ -22,6 +22,15 @@ header {
     flex-direction: row;
 }
 
+footer {
+    width: 100%;
+    height: 25px;
+    border-top: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    padding-left:25px;
+}
+
 .main {
     margin-left: 50px;
     margin-right: 50px;
@@ -51,14 +60,58 @@ img {
     width: 100%;
 }
 
+
+#toggle-animal {
+    max-width: 86px;
+    align-self: center;
+}
+
 #gallery {
     display: flex;
     flex: row;
     flex-wrap: wrap;
+    border-right:1px solid gray;
+    border-left: 1px solid gray;
+    padding-right:5px;
+    padding-left:5px;
+}
+
+#factoid {
+    padding-right: 35px;
+    font-size: 35pt;
+    font-size: 25pt;
+    border-bottom: 1px solid gray;
+    padding-bottom:25px;
+}
+
+.fact-pic {
+    display: flex;
+    flex-direction: column-reverse;
+
 }
 
 .column {
-    flex: 25%;
+    flex: 20%;
     max-width: 25%;
     padding: 0 4px;
 }
+
+@media screen and (max-width: 800px) {
+    #factoid {
+        font-size: 20pt;
+    }
+    .title {
+        font-size: 25pt;
+    }
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }

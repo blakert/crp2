@@ -6,8 +6,8 @@ let currAnimal = ANIMALS.CAT;
 
 
 const catFactsUrl = 'https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts';
-const dogImgsUrl = 'https://dog.ceo/api/breeds/image/random/50';
-const catImgsUrl = 'https://api.thecatapi.com/v1/images/search?size=med&limit=50';
+const dogImgsUrl = 'https://dog.ceo/api/breeds/image/random/40';
+const catImgsUrl = 'https://api.thecatapi.com/v1/images/search?size=med&limit=40';
 const catImgKey = '28afa6da-8207-42c7-b898-c3c9248c3549'
 let catFacts = [];
 let galleryUrls = [];
@@ -81,16 +81,18 @@ function addFact() {
 }
 
 function constructGallery() {
+    
     let galleryContent = '<div class="column">';
     let gallery = document.getElementById('gallery');
     for (let i = 0; i < galleryUrls.length; i++) {
-        console.log('number of photos',galleryUrls.length);
-        console.log('num columns', galleryUrls.length / 4)
-        if ( i > 0 && i % (Math.floor(galleryUrls.length / 4)) == 0) {
+        if ( i > 0 && i % (10) == 0) {
             galleryContent += '</div> <div class="column">';
         }
-        galleryContent += `
-            <img src= ${galleryUrls[i]} />`
+        galleryContent += `<div class="fact-pic">
+        <p> ${getFact(i)}</p>
+        <img src= ${galleryUrls[i]} />
+        </div>`
+        
     }
     galleryContent += '</div>';
     gallery.innerHTML = galleryContent;
@@ -110,7 +112,16 @@ function getRandomFact() {
 }
 
 function randomIndex() {
-    return  Math.floor(Math.random() * catFacts.all.length-1);
+    console.log(catFacts.length);
+    return Math.floor(Math.random() * catFacts.all.length);
+}
+
+function getFact(index){
+    let fact = catFacts.all[index].text;
+    if (isDog()) {
+        fact = fact.replace(/cat/gi, 'dog').replace(/kitty/gi, 'puppy').replace(/meow/gi, 'bark').replace(/purr/gi, 'whine');
+    }
+    return fact;
 }
 
 
