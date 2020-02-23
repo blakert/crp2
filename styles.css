@@ -9,9 +9,9 @@ body {
 }
 
 h4,
-h3{
+h3 {
     /* font-family: 'PT-Seriff', serif; */
-    font-weight:  intial;
+    font-weight: intial;
 }
 
 header {
@@ -25,7 +25,24 @@ header {
 .main {
     margin-left: 50px;
     margin-right: 50px;
-    width:100%;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.title {
+    font-size: 50pt;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.quote {
+    font-weight: bold;
+    margin-right: 25px;
+    margin-top: 74px;
+    font-size: 45pt;
 }
 
 img {
@@ -37,7 +54,7 @@ img {
 #gallery {
     display: flex;
     flex: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .column {
