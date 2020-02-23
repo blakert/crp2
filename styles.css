@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+h4,
+h3{
+    /* font-family: 'PT-Seriff', serif; */
+    font-weight:  intial;
+}
+
+header {
+    width: 100%;
+    height: 25px;
+    background-color: #1F2831;
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    margin-left: 50px;
+    margin-right: 50px;
+    width:100%;
+}
+
+img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#gallery {
+    display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
